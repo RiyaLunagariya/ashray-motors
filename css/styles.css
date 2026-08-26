@@ -54,7 +54,7 @@ nav ul li a:hover {
 .hero {
   min-height: 90vh;
   background:
-    linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
     url("https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1600&q=80");
   background-size: cover;
   background-position: center;
@@ -125,7 +125,7 @@ section {
   padding: 30px;
   border-radius: 12px;
   text-align: center;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   transition: 0.3s;
 }
 
@@ -164,7 +164,7 @@ section {
   background: white;
   padding: 35px;
   border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.12);
 }
 
 form input,
@@ -221,7 +221,7 @@ form button:hover {
   border-radius: 50px;
   text-decoration: none;
   font-weight: bold;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 /* FOOTER */
@@ -233,7 +233,7 @@ footer {
 }
 
 /* MOBILE */
-@media (max-width: 700px) {
+@media(max-width: 700px) {
   nav {
     flex-direction: column;
     gap: 15px;
