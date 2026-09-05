@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ashray Motors | Multi-Brand Car Workshop | Rajkot</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
     <link rel="stylesheet" href="styles.css">
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -341,7 +343,13 @@
     <section class="inquiry-section">
         <div class="container">
             <h2 class="section-title-inquiry">SEND SERVICE INQUIRY</h2>
-            <p class="inquiry-subtitle">Fill out the form below or click to open your mail app directly.</p>
+            <p class="inquiry-subtitle">Choose email or WhatsApp to send your service request.</p>
+
+            <ol class="inquiry-steps">
+                <li>Fill in your name, phone number, car, and required service.</li>
+                <li>Choose email or WhatsApp below.</li>
+                <li>Review the message and tap Send in your mail or WhatsApp app.</li>
+            </ol>
             
             <form action="mailto:ashraymotorsrajkot2017@gmail.com" method="POST" enctype="text/plain" class="inquiry-form">
                 <div class="form-group">
@@ -358,6 +366,9 @@
                 </div>
                 <button type="submit" class="btn-submit-inquiry">
                     <i class="fas fa-paper-plane"></i> Send Inquiry Now
+                </button>
+                <button type="button" class="btn-whatsapp-inquiry" id="whatsapp-inquiry">
+                    <i class="fab fa-whatsapp"></i> Send on WhatsApp
                 </button>
             </form>
         </div>
@@ -452,6 +463,23 @@
         document.querySelectorAll('.stat-item').forEach(stat => {
             statsObserver.observe(stat);
         });
+
+        // Build a WhatsApp message from the inquiry form fields.
+        const whatsappInquiry = document.querySelector('#whatsapp-inquiry');
+        if (whatsappInquiry) {
+            whatsappInquiry.addEventListener('click', () => {
+                const form = whatsappInquiry.closest('form');
+                const formData = new FormData(form);
+                const message = [
+                    'Ashray Motors Service Inquiry',
+                    `Name: ${formData.get('Full Name')}`,
+                    `Phone: ${formData.get('Phone Number')}`,
+                    `Car: ${formData.get('Car Brand & Model')}`,
+                    `Service: ${formData.get('Service Details')}`
+                ].join('\n');
+                window.open(`https://wa.me/918735023434?text=${encodeURIComponent(message)}`, '_blank');
+            });
+        }
 
         // Add ripple effect to buttons
         document.querySelectorAll('.btn-primary, .btn-email').forEach(btn => {
